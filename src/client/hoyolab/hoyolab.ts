@@ -172,8 +172,7 @@ export class Hoyolab {
   async gameRecordCard(): Promise<IGameRecordCard> {
     /* c8 ignore start */
     this.request.setQueryParams({
-      uid:
-        this.cookie.ltuid || this.cookie.accountId || this.cookie.accountIdV2,
+      uid: this.cookie.ltuid || this.cookie.accountId,
     })
 
     const { response: res } = await this.request.send(GAME_RECORD_CARD_API)
